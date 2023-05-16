@@ -4,6 +4,7 @@ use App\Http\Controllers\AdminController;
 use App\Http\Controllers\AuthController;
 use App\Http\Controllers\BookController;
 use App\Http\Controllers\MessageController;
+use App\Http\Controllers\UserController;
 use Illuminate\Support\Facades\Route;
 use Symfony\Component\Translation\MessageCatalogue;
 
@@ -20,7 +21,7 @@ use Symfony\Component\Translation\MessageCatalogue;
 
  Route::get('/', function () {
      return view('landing.welcome');
- });
+ })->name('landing');
 //Route FE
 Route::get('/main', function () {
     return view('layouts.main');
@@ -64,3 +65,6 @@ Route::get('/addbook', [BookController::class, 'addbook'])->name('addbook');
 Route::post('/create-book', [BookController::class, 'createBook'])->name('createbook');
 Route::post('/deletebook/{id}', [BookController::class, 'deleteBook'])->name('deleteBook');
 Route::post('logout', [AuthController::class, 'logout'])->name('logout');
+
+//Route User
+Route::get('/dashboard-user', [UserController::class, 'index'])->name('user')->middleware('user');

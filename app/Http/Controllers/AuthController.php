@@ -53,7 +53,7 @@ class AuthController extends Controller
             if(Auth::user() && Auth::user()->role_id == 1){
             return redirect('dashboard');
             }
-            return redirect()->intended('/');
+            return redirect()->intended('dashboard-user');
         }
             
         return back()->withErrors([

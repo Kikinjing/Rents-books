@@ -38,9 +38,9 @@
                     </li>
                     <li class="nav-item">
                         @auth
-                            <form action="{{ 'logout' }}" method="post">
+                            <form action="{{ route('logout') }}" method="post">
                             @csrf
-                            <button type="submit" class="nav-link active btn btn-outline-primary">Log out</button>
+                            <button type="submit" class="nav-link active btn btn-outline-danger">Log out</button>
                             </form>
                         @else
                         <a class="nav-link btn" href="{{ route('indexLogin') }}">Login</a>
@@ -105,12 +105,12 @@
 
     {{-- card popular book --}}
     <section class="bg-danger pt-2">
-        <div class="container my-5">
-            <div class="row text-center">
-                <h4 class="pb-3" style="color: #FFF; font-weight: 600;"> Top 3 Books </h4>
+        <div class="container ms-5 my-5">
+            <div class="row my-4 ms-5 text-center">
+                <h4 class="pb-3 pe-5" style="color: #FFF; font-weight: 600;"> Top 3 Books </h4>
                 <hr class="solid mb-3">
             </div>
-            <div class="row mb-3">
+            <div class="row mb-3 ps-5">
                 <div class="col-md-4 mb-3">
                     <div class="card" style="width: 18rem;">
                         <img src="https://tse1.mm.bing.net/th?id=OIP.ZJ98NTcKqthTtALjpi4yBwHaK2&pid=Api&P=0"
